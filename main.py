@@ -1,4 +1,4 @@
-from preprocessing.preprocess import load_image, preprocess_image, sharpen_image, detect_edges
+from preprocessing.preprocess import load_image, preprocess_image, sharpen_image, detect_edges, find_parking_slots
 import matplotlib.pyplot as plt
 import cv2
 
@@ -9,8 +9,12 @@ def main():
 
     sharpened=sharpen_image(preprocessed) 
     edges=detect_edges(preprocessed)
-    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
+    slot_image = find_parking_slots(edges, image)
+
+    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    slot_image_rgb = cv2.cvtColor(slot_image, cv2.COLOR_BGR2RGB)
+    """
     plt.figure(figsize=(15, 8))
 
     plt.subplot(2, 2, 1)
@@ -31,6 +35,22 @@ def main():
     plt.subplot(2, 2, 4)
     plt.title("Canny edges")
     plt.imshow(preprocessed, cmap='gray')
+    plt.axis("off")
+
+    plt.tight_layout()
+    plt.show()
+
+    """
+    plt.figure(figsize=(12, 5))
+    
+    plt.subplot(1, 2, 1)
+    plt.title("Original Image")
+    plt.imshow(image_rgb)
+    plt.axis("off")
+
+    plt.subplot(1, 2, 2)
+    plt.title("Detected Parking Slots")
+    plt.imshow(slot_image_rgb)
     plt.axis("off")
 
     plt.tight_layout()
