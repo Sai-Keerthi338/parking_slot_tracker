@@ -22,6 +22,7 @@ def detect_edges(image):
     # Use Canny edge detection on the grayscale image
     edges = cv2.Canny(image, threshold1=50, threshold2=150)
     return edges
+
 def find_parking_slots(edge_image, original_image):
     contours, _ = cv2.findContours(edge_image, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     
