@@ -27,50 +27,7 @@ def main():
 
     print("All intermediate images saved to outputs/")
 
-    """
-    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    slot_image_rgb = cv2.cvtColor(slot_image, cv2.COLOR_BGR2RGB)
-    
-    plt.figure(figsize=(15, 8))
 
-    plt.subplot(2, 2, 1)
-    plt.title("Original Image")
-    plt.imshow(image_rgb)
-    plt.axis("off")
-
-    plt.subplot(2, 2, 2)
-    plt.title("Preprocessed Image (Grayscale + Blur)")
-    plt.imshow(preprocessed, cmap='gray')
-    plt.axis("off")
-
-    plt.subplot(2, 2, 3)
-    plt.title("Sharpened Image")
-    plt.imshow(preprocessed, cmap='gray')
-    plt.axis("off")
-
-    plt.subplot(2, 2, 4)
-    plt.title("Canny edges")
-    plt.imshow(preprocessed, cmap='gray')
-    plt.axis("off")
-
-    plt.tight_layout()
-    plt.show()
-
-    plt.figure(figsize=(12, 5))
-    
-    plt.subplot(1, 2, 1)
-    plt.title("Original Image")
-    plt.imshow(image_rgb)
-    plt.axis("off")
-
-    plt.subplot(1, 2, 2)
-    plt.title("Detected Parking Slots")
-    plt.imshow(slot_image_rgb)
-    plt.axis("off")
-
-    plt.tight_layout()
-    plt.show()
-    """
 
 if __name__=="__main__":
     main()
