@@ -32,7 +32,17 @@ def main():
     cv2.imwrite("outputs/slots.jpg", slot_image)
     cv2.imwrite("outputs/slot_status.jpg", final_image)
 
+<<<<<<< HEAD
     print("Done. Check outputs folder.")
 
 if __name__=="__main__":
     main()
+=======
+    print("All intermediate images saved to outputs/")
+
+
+
+if __name__=="__main__":
+    main()
+    
+>>>>>>> c033429427a3c8ed1b6713a8dc6d3fd89d3f3c8a
